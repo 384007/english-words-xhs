@@ -1,0 +1,293 @@
+/* Word Adventure 《单词大冒险》 picture-book styles. No external assets. */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Hiragino Sans GB", sans-serif;
+  background: #fef6e4;
+  color: #2b2b3a;
+  overflow: hidden;
+}
+body {
+  background:
+    radial-gradient(circle at 20% 10%, #ffe8a3 0, rgba(255,232,163,0) 40%),
+    radial-gradient(circle at 85% 20%, #bde0fe 0, rgba(189,224,254,0) 45%),
+    linear-gradient(180deg, #d0f4ff 0%, #fef6e4 55%, #c9f7d1 100%);
+}
+#app {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- top bar ---- */
+.topbar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: linear-gradient(90deg, #ff9f68, #ffd166);
+  color: #3a2a12;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 5;
+}
+.topbar .title { font-weight: 800; font-size: 16px; flex: 1 1 auto; line-height: 1.1; }
+.topbar .title small { display: block; font-weight: 600; font-size: 11px; opacity: 0.8; }
+.pill {
+  background: rgba(255,255,255,0.75);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ---- scroll area ---- */
+.screen {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 12px 90px;
+}
+.screen h2 { font-size: 18px; margin: 6px 0 10px; }
+.sub { font-size: 12px; color: #6b6b7b; margin: -4px 0 12px; }
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #5aa9ff, #3b82f6);
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  min-height: 44px;
+}
+.btn:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0,0,0,0.12); }
+.btn.secondary { background: linear-gradient(180deg, #ffd86b, #f7b733); color: #4a3200; }
+.btn.ghost { background: rgba(255,255,255,0.8); color: #3b3b4a; box-shadow: 0 2px 0 rgba(0,0,0,0.08); }
+.btn.pink { background: linear-gradient(180deg, #ff8fb1, #ff5d8f); }
+.btn.green { background: linear-gradient(180deg, #86e3a0, #38b86a); }
+.btn.small { padding: 8px 12px; font-size: 13px; min-height: 36px; border-radius: 10px; }
+.btn[disabled] { opacity: 0.45; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+
+/* ---- home menu grid ---- */
+.menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.menu-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.menu-card .ic { font-size: 30px; }
+.menu-card .n { font-weight: 800; font-size: 14px; margin-top: 4px; }
+.menu-card .n small { display: block; font-weight: 600; font-size: 11px; color: #888; }
+
+/* ---- world map route ---- */
+.route-section { margin: 14px 0; }
+.route-section h3 { font-size: 15px; margin: 0 0 8px; display: flex; align-items: center; gap: 6px; }
+.route {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.world-node {
+  position: relative;
+  width: calc(33.33% - 7px);
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px 4px 8px;
+  text-align: center;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.08);
+  cursor: pointer;
+  touch-action: manipulation;
+  min-height: 92px;
+}
+.world-node.locked { background: #ececf2; color: #9a9aa8; cursor: default; }
+.world-node .wemoji { font-size: 28px; }
+.world-node .wname { font-size: 12px; font-weight: 700; line-height: 1.15; margin-top: 3px; }
+.world-node .wname small { display: block; font-weight: 500; font-size: 10px; color: #999; }
+.world-node .lock { font-size: 11px; margin-top: 4px; color: #c05a5a; font-weight: 700; }
+.world-node .cleared { position: absolute; top: 4px; right: 6px; font-size: 13px; }
+.world-node .mascot-here { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 20px; }
+
+/* ---- word card ---- */
+.wordcard {
+  background: #fff;
+  border-radius: 22px;
+  padding: 18px 14px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  margin: 6px 0 12px;
+}
+.wordcard .big-emoji { font-size: 72px; line-height: 1; }
+.wordcard .big-word { font-size: 34px; font-weight: 900; margin: 6px 0 2px; }
+.wordcard .syll { font-size: 16px; color: #ef7d3a; font-weight: 700; letter-spacing: 1px; }
+.wordcard .meaning { font-size: 20px; margin: 6px 0; font-weight: 700; }
+.wordcard .sentence { font-size: 15px; margin-top: 10px; color: #333; cursor: pointer; }
+.wordcard .sentence .zh { display: block; color: #777; font-size: 13px; margin-top: 2px; }
+.hint-box { background: #fff6da; border-radius: 12px; padding: 8px 10px; font-size: 13px; color: #7a5a10; margin: 8px 0; }
+
+/* ---- quiz options grid ---- */
+.opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.opt {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 8px;
+  text-align: center;
+  font-size: 40px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.opt .lbl { display: block; font-size: 14px; font-weight: 700; color: #444; margin-top: 4px; }
+.opt.right { background: #c7f5d2; box-shadow: 0 0 0 3px #38b86a inset; }
+.opt.wrong { background: #ffd4d4; box-shadow: 0 0 0 3px #e55 inset; }
+
+/* ---- spelling tiles ---- */
+.spell-slots { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; min-height: 48px; margin: 10px 0; }
+.slot { width: 36px; height: 44px; border-radius: 10px; background: #fff3d6; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; border: 2px dashed #e0b96a; }
+.slot.filled { border-style: solid; background: #fff; }
+.tiles { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0; }
+.tile {
+  width: 42px; height: 48px; border-radius: 12px;
+  background: linear-gradient(180deg,#ffe29a,#ffc94d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 800; color: #5a3b00;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12); cursor: pointer; touch-action: manipulation;
+}
+.tile.used { visibility: hidden; }
+.tile:active { transform: translateY(2px); }
+
+/* ---- matching ---- */
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.match-card {
+  background: #fff; border-radius: 14px; padding: 12px 6px; text-align: center;
+  font-size: 15px; font-weight: 700; box-shadow: 0 3px 7px rgba(0,0,0,0.08);
+  cursor: pointer; touch-action: manipulation; min-height: 58px;
+  display: flex; align-items: center; justify-content: center;
+}
+.match-card .em { font-size: 28px; }
+.match-card.sel { box-shadow: 0 0 0 3px #3b82f6 inset; }
+.match-card.done { visibility: hidden; }
+
+/* ---- sentence train ---- */
+.train-target { display: flex; flex-wrap: wrap; gap: 6px; min-height: 44px; background: #eef6ff; border-radius: 12px; padding: 8px; margin: 8px 0; }
+.train-pool { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.wtile { background: #fff; border-radius: 10px; padding: 8px 10px; font-weight: 700; box-shadow: 0 2px 0 rgba(0,0,0,0.1); cursor: pointer; touch-action: manipulation; }
+.wtile.used { visibility: hidden; }
+
+/* ---- phrases / list rows ---- */
+.row {
+  display: flex; align-items: center; gap: 10px;
+  background: #fff; border-radius: 14px; padding: 10px 12px; margin: 8px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.row .em { font-size: 24px; }
+.row .txt { flex: 1 1 auto; }
+.row .txt b { font-size: 15px; }
+.row .txt .zh { display: block; font-size: 13px; color: #777; }
+
+/* ---- stickers ---- */
+.sticker-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin: 10px 0; }
+.sticker { background: #fff; border-radius: 14px; padding: 10px 4px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.07); }
+.sticker.empty { background: #e9e9f0; color: #b5b5c2; }
+.sticker .em { font-size: 30px; }
+.sticker .nm { font-size: 10px; margin-top: 2px; }
+
+/* ---- lion mascot (inline SVG wrapper) ---- */
+.mascot-stage { text-align: center; margin: 8px 0; }
+.mascot { width: 120px; height: 120px; display: inline-block; }
+.mascot-wrap.dance { animation: dance 0.6s ease-in-out 2; }
+.mascot-wrap.comfort { animation: comfort 0.8s ease-in-out 1; }
+@keyframes dance {
+  0%,100% { transform: rotate(0) translateY(0); }
+  25% { transform: rotate(-8deg) translateY(-6px); }
+  75% { transform: rotate(8deg) translateY(-6px); }
+}
+@keyframes comfort {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(5px) scale(0.96); }
+}
+.mascot-bubble { font-size: 13px; color: #555; min-height: 18px; }
+
+/* ---- celebration ---- */
+#celebrate-layer { position: fixed; inset: 0; pointer-events: none; z-index: 50; overflow: hidden; }
+.confetti { position: absolute; top: -20px; width: 10px; height: 14px; border-radius: 2px; animation: fall 1.3s linear forwards; }
+@keyframes fall { to { transform: translateY(110vh) rotate(540deg); opacity: 0.2; } }
+.big-celebrate {
+  position: fixed; left: 50%; top: 40%; transform: translate(-50%,-50%);
+  font-size: 64px; z-index: 60; animation: pop 1.2s ease forwards; pointer-events: none;
+}
+@keyframes pop { 0% { transform: translate(-50%,-50%) scale(0.2); opacity: 0; } 30% { transform: translate(-50%,-50%) scale(1.2); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1); opacity: 0; } }
+
+/* ---- store / outfits ---- */
+.store-item { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 14px; padding: 10px 12px; margin: 8px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+.store-item .em { font-size: 28px; }
+.store-item .info { flex: 1 1 auto; }
+.store-item .info b { font-size: 15px; }
+.store-item .info small { display: block; color: #888; font-size: 12px; }
+
+/* ---- toggle ---- */
+.toggle-row { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 12px; padding: 8px 12px; margin: 8px 0; }
+.toggle-row .lab { flex: 1 1 auto; font-weight: 700; font-size: 14px; }
+.sw { width: 46px; height: 26px; border-radius: 999px; background: #ccc; position: relative; cursor: pointer; flex: 0 0 auto; touch-action: manipulation; }
+.sw.on { background: #38b86a; }
+.sw .knob { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: left 0.15s; }
+.sw.on .knob { left: 23px; }
+
+/* ---- progress bar ---- */
+.bar { background: #e3e3ee; border-radius: 999px; height: 12px; overflow: hidden; margin: 6px 0; }
+.bar > span { display: block; height: 100%; background: linear-gradient(90deg,#86e3a0,#38b86a); }
+
+/* ---- feedback banner ---- */
+.banner { text-align: center; font-weight: 800; font-size: 18px; margin: 8px 0; min-height: 24px; }
+.banner.good { color: #2a9d53; }
+.banner.bad { color: #d4504e; }
+
+/* ---- ai label ---- */
+.ai-label {
+  position: fixed; bottom: 2px; left: 50%; transform: translateX(-50%);
+  font-size: 10px; color: rgba(0,0,0,0.4); background: rgba(255,255,255,0.6);
+  padding: 2px 8px; border-radius: 999px; z-index: 40; pointer-events: none; white-space: nowrap;
+}
+
+/* ---- bottom nav ---- */
+.bottomnav {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; background: #fff; box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+  z-index: 6;
+}
+.bottomnav .nav {
+  flex: 1 1 0; text-align: center; padding: 8px 2px 18px; font-size: 11px; color: #888;
+  cursor: pointer; touch-action: manipulation;
+}
+.bottomnav .nav .i { font-size: 20px; display: block; }
+.bottomnav .nav.active { color: #3b82f6; font-weight: 800; }
+
+/* ---- small screens ---- */
+@media (max-height: 600px) {
+  .wordcard .big-emoji { font-size: 54px; }
+  .wordcard .big-word { font-size: 28px; }
+  .screen { padding-bottom: 80px; }
+}
+@media (max-width: 340px) {
+  .opt { font-size: 32px; }
+  .tile { width: 36px; height: 44px; font-size: 20px; }
+}
