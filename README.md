@@ -6,12 +6,20 @@ no network requests.
 
 ## At a glance
 
-- **Worlds:** 27 (24 kids themed worlds + 3 adult worlds)
-- **Word entries:** 2015 (1701 unique words)
+- **Worlds:** 44 total
+  - **Kids Route:** 24 themed worlds (1833 entries) + 3 adult worlds (182 entries)
+  - **Level Route:** spoken high-frequency (5 files, 530 entries), primary (28), middle/zhongkao (145), high/gaokao (346), CET-4/6 (274), IELTS/TOEFL (269)
+- **Word entries:** 3607 (3293 unique words)
 - **Daily spoken phrases:** 394 high-frequency chunks / daily lines
 - **Cartoon dialogues:** 72 original mini-dialogues (3 per kids world) for listening practice
 - **Selftest:** `node tests/selftest.js` → **33 / 33 checks passed**
-- **Total size:** ~0.6 MB (well under the 9 MB cap)
+- **Total size:** ~1.1 MB (well under the 9 MB cap)
+
+Note on the 8,000-10,000 target: this build ships 3293 unique words. A measured top-3,000
+spoken-frequency guarantee would require an offline frequency corpus (e.g. SUBTLEX-US), which is
+not available in the no-network build environment, so spoken coverage was curated from
+high-frequency vocabulary and verified structurally. See `WORDLIST.md` for shipped vs. pending
+stages; more words can be appended as data files without any engine change.
 
 ## How to play
 
@@ -74,5 +82,11 @@ least 3 dialogues with transcripts and questions.
 - `data-adult-travel.js` / `data-adult-workplace.js` / `data-adult-exam.js` — adult worlds.
 - `data-phrases.js` — 394 spoken phrases.
 - `data-dialogues.js` — 72 cartoon-listening dialogues.
+- `data-spoken-01.js` … `data-spoken-05.js` — spoken high-frequency words (group `spoken`).
+- `data-level-primary-01.js` — primary stage (group `primary`).
+- `data-level-middle-01.js` … `data-level-middle-02.js` — middle school / zhongkao (group `middle`).
+- `data-level-high-01.js` … `data-level-high-03.js` — high school / gaokao (group `high`).
+- `data-level-cet-01.js` … `data-level-cet-03.js` — CET-4/6 additions (group `cet`).
+- `data-level-ielts-01.js` … `data-level-ielts-03.js` — IELTS/TOEFL core (group `ielts`).
 - `tests/selftest.js` — Node validation script.
 - `WORDLIST.md` — data manifest (shipped + pending stages).
