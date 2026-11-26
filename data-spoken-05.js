@@ -9,16 +9,16 @@
     group: 'spoken',
     star_req: 0,
     words: [
-      { word: 'cost', meaning: '费用', syllables: 'cost', sentence: 'I can use the word "cost" in a sentence.', sentence_zh: '我能在句子里用“费用”这个词。', emoji: '' },
-      { word: 'price', meaning: '价格', syllables: 'p-ri-ce', sentence: 'I can use the word "price" in a sentence.', sentence_zh: '我能在句子里用“价格”这个词。', emoji: '' },
-      { word: 'coin', meaning: '硬币', syllables: 'coin', sentence: 'I can use the word "coin" in a sentence.', sentence_zh: '我能在句子里用“硬币”这个词。', emoji: '' },
-      { word: 'screen', meaning: '屏幕', syllables: 'sc-reen', sentence: 'I can use the word "screen" in a sentence.', sentence_zh: '我能在句子里用“屏幕”这个词。', emoji: '' },
-      { word: 'battery', meaning: '电池', syllables: 'bat-te-ry', sentence: 'I can use the word "battery" in a sentence.', sentence_zh: '我能在句子里用“电池”这个词。', emoji: '' },
-      { word: 'charger', meaning: '充电器', syllables: 'c-har-ger', sentence: 'I can use the word "charger" in a sentence.', sentence_zh: '我能在句子里用“充电器”这个词。', emoji: '' },
-      { word: 'torch', meaning: '手电筒', syllables: 'torch', sentence: 'I can use the word "torch" in a sentence.', sentence_zh: '我能在句子里用“手电筒”这个词。', emoji: '' },
-      { word: 'comb', meaning: '梳子', syllables: 'comb', sentence: 'I can use the word "comb" in a sentence.', sentence_zh: '我能在句子里用“梳子”这个词。', emoji: '' },
-      { word: 'box', meaning: '盒子', syllables: 'box', sentence: 'I can use the word "box" in a sentence.', sentence_zh: '我能在句子里用“盒子”这个词。', emoji: '' },
-      { word: 'tin', meaning: '锡罐', syllables: 'tin', sentence: 'I can use the word "tin" in a sentence.', sentence_zh: '我能在句子里用“锡罐”这个词。', emoji: '' }
+      { word: 'cost', meaning: '费用', syllables: 'cost', sentence: 'How much does the ticket cost?', sentence_zh: '这张票多少钱？', emoji: '' },
+      { word: 'price', meaning: '价格', syllables: 'p-ri-ce', sentence: 'The price is a bit too high for me.', sentence_zh: '这个价格对我来说有点太高了。', emoji: '' },
+      { word: 'coin', meaning: '硬币', syllables: 'coin', sentence: 'I found a shiny coin on the ground.', sentence_zh: '我在地上发现了一枚闪亮的硬币。', emoji: '' },
+      { word: 'screen', meaning: '屏幕', syllables: 'sc-reen', sentence: 'My phone screen just cracked.', sentence_zh: '我的手机屏幕刚裂了。', emoji: '' },
+      { word: 'battery', meaning: '电池', syllables: 'bat-te-ry', sentence: 'My phone battery is almost dead.', sentence_zh: '我的手机电池快没电了。', emoji: '' },
+      { word: 'charger', meaning: '充电器', syllables: 'c-har-ger', sentence: 'Can I borrow your charger for a minute?', sentence_zh: '我能借用一下你的充电器吗？', emoji: '' },
+      { word: 'torch', meaning: '手电筒', syllables: 'torch', sentence: 'Bring a torch, it is dark in there.', sentence_zh: '带个手电筒吧，里面很黑。', emoji: '' },
+      { word: 'comb', meaning: '梳子', syllables: 'comb', sentence: 'Can I borrow your comb for a second?', sentence_zh: '我能借一下你的梳子吗？', emoji: '' },
+      { word: 'box', meaning: '盒子', syllables: 'box', sentence: 'Just put the books in this box.', sentence_zh: '把书放进这个盒子里就行。', emoji: '' },
+      { word: 'tin', meaning: '锡罐', syllables: 'tin', sentence: 'There are some biscuits in that tin.', sentence_zh: '那个锡罐里有一些饼干。', emoji: '' }
     ]
   };
   var root = (typeof window !== 'undefined') ? window : (typeof global !== 'undefined' ? global : this);
