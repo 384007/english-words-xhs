@@ -9,21 +9,21 @@
     group: 'middle',
     star_req: 0,
     words: [
-      { word: 'equal', meaning: '平等的', syllables: 'e-qual', sentence: 'I can use the word "equal" in a sentence.', sentence_zh: '我能在句子里用“平等的”这个词。', emoji: '' },
-      { word: 'escape', meaning: '逃跑', syllables: 'es-ca-pe', sentence: 'I can use the word "escape" in a sentence.', sentence_zh: '我能在句子里用“逃跑”这个词。', emoji: '' },
-      { word: 'evidence', meaning: '证据', syllables: 'e-vi-den-ce', sentence: 'I can use the word "evidence" in a sentence.', sentence_zh: '我能在句子里用“证据”这个词。', emoji: '' },
-      { word: 'exact', meaning: '精确的', syllables: 'e-xact', sentence: 'I can use the word "exact" in a sentence.', sentence_zh: '我能在句子里用“精确的”这个词。', emoji: '' },
-      { word: 'examine', meaning: '检查', syllables: 'e-xa-mi-ne', sentence: 'I can use the word "examine" in a sentence.', sentence_zh: '我能在句子里用“检查”这个词。', emoji: '' },
-      { word: 'excellent', meaning: '极好的', syllables: 'ex-cel-lent', sentence: 'I can use the word "excellent" in a sentence.', sentence_zh: '我能在句子里用“极好的”这个词。', emoji: '' },
-      { word: 'excite', meaning: '使兴奋', syllables: 'ex-ci-te', sentence: 'I can use the word "excite" in a sentence.', sentence_zh: '我能在句子里用“使兴奋”这个词。', emoji: '' },
-      { word: 'exist', meaning: '存在', syllables: 'e-xist', sentence: 'I can use the word "exist" in a sentence.', sentence_zh: '我能在句子里用“存在”这个词。', emoji: '' },
-      { word: 'expand', meaning: '扩张', syllables: 'ex-pand', sentence: 'I can use the word "expand" in a sentence.', sentence_zh: '我能在句子里用“扩张”这个词。', emoji: '' },
-      { word: 'expect', meaning: '期待', syllables: 'ex-pect', sentence: 'I can use the word "expect" in a sentence.', sentence_zh: '我能在句子里用“期待”这个词。', emoji: '' },
-      { word: 'expense', meaning: '费用', syllables: 'ex-pen-se', sentence: 'I can use the word "expense" in a sentence.', sentence_zh: '我能在句子里用“费用”这个词。', emoji: '' },
-      { word: 'experiment', meaning: '实验', syllables: 'ex-pe-ri-ment', sentence: 'I can use the word "experiment" in a sentence.', sentence_zh: '我能在句子里用“实验”这个词。', emoji: '' },
-      { word: 'express', meaning: '表达', syllables: 'exp-ress', sentence: 'I can use the word "express" in a sentence.', sentence_zh: '我能在句子里用“表达”这个词。', emoji: '' },
-      { word: 'extra', meaning: '额外的', syllables: 'ext-ra', sentence: 'I can use the word "extra" in a sentence.', sentence_zh: '我能在句子里用“额外的”这个词。', emoji: '' },
-      { word: 'extreme', meaning: '极端的', syllables: 'ext-re-me', sentence: 'I can use the word "extreme" in a sentence.', sentence_zh: '我能在句子里用“极端的”这个词。', emoji: '' }
+      { word: 'equal', meaning: '平等的', syllables: 'e-qual', sentence: 'All students should have equal chances to learn.', sentence_zh: '所有学生都应该有平等的学习机会。', emoji: '' },
+      { word: 'escape', meaning: '逃跑', syllables: 'es-ca-pe', sentence: 'The thief tried to escape from the police.', sentence_zh: '小偷试图从警察那里逃跑。', emoji: '' },
+      { word: 'evidence', meaning: '证据', syllables: 'e-vi-den-ce', sentence: 'The police found clear evidence at the scene.', sentence_zh: '警察在现场找到了明确的证据。', emoji: '' },
+      { word: 'exact', meaning: '精确的', syllables: 'e-xact', sentence: 'Can you tell me the exact time of the meeting?', sentence_zh: '你能告诉我会议的精确时间吗？', emoji: '' },
+      { word: 'examine', meaning: '检查', syllables: 'e-xa-mi-ne', sentence: 'The doctor will examine your eyes today.', sentence_zh: '医生今天会检查你的眼睛。', emoji: '' },
+      { word: 'excellent', meaning: '极好的', syllables: 'ex-cel-lent', sentence: 'She did an excellent job on the test.', sentence_zh: '她在考试中表现极好。', emoji: '' },
+      { word: 'excite', meaning: '使兴奋', syllables: 'ex-ci-te', sentence: 'The good news will excite the whole team.', sentence_zh: '这个好消息会让整个团队兴奋。', emoji: '' },
+      { word: 'exist', meaning: '存在', syllables: 'e-xist', sentence: 'Some people believe that ghosts do not exist.', sentence_zh: '有些人相信鬼魂并不存在。', emoji: '' },
+      { word: 'expand', meaning: '扩张', syllables: 'ex-pand', sentence: 'The company plans to expand its business overseas.', sentence_zh: '这家公司计划将业务扩张到海外。', emoji: '' },
+      { word: 'expect', meaning: '期待', syllables: 'ex-pect', sentence: 'We expect good weather for the trip.', sentence_zh: '我们期待旅行有好天气。', emoji: '' },
+      { word: 'expense', meaning: '费用', syllables: 'ex-pen-se', sentence: 'The trip was fun, but the expense was high.', sentence_zh: '这次旅行很有趣，但费用很高。', emoji: '' },
+      { word: 'experiment', meaning: '实验', syllables: 'ex-pe-ri-ment', sentence: 'We did a simple experiment in science class.', sentence_zh: '我们在科学课上做了一个简单的实验。', emoji: '' },
+      { word: 'express', meaning: '表达', syllables: 'exp-ress', sentence: 'She used a drawing to express her feelings.', sentence_zh: '她用一幅画来表达自己的感受。', emoji: '' },
+      { word: 'extra', meaning: '额外的', syllables: 'ext-ra', sentence: 'The teacher gave us extra time to finish.', sentence_zh: '老师给了我们额外的时间去完成。', emoji: '' },
+      { word: 'extreme', meaning: '极端的', syllables: 'ext-re-me', sentence: 'Climbing that mountain is an extreme sport.', sentence_zh: '攀登那座山是一项极端的运动。', emoji: '' }
     ]
   };
   var root = (typeof window !== 'undefined') ? window : (typeof global !== 'undefined' ? global : this);
