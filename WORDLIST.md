@@ -5,7 +5,7 @@ pending, so a later session can append data files **without touching the engine*
 The engine is designed to load whatever data files exist and register them on the
 shared global registries (`WORLDS`, `PHRASES`, `DIALOGUES`).
 
-Last updated by the FEAT-001 data session.
+Last updated by the FEAT-004 vocabulary-expansion session.
 
 ## Data contract (do not change)
 
@@ -64,33 +64,77 @@ Totals: **1833 kid words + 182 adult words = 2015 word entries**; **1701 unique 
   (24 worlds), each 2-3 lines with bilingual transcript and 2 picture-based
   comprehension questions. Scripts are original; no real cartoon lines were copied.
 
+### Level Route + Spoken Core — FEAT-004 expansion (shipped this session)
+
+Generated from a curated, model-sourced high-frequency word list
+(`tools/vocab_data.js`) and emitted as ES5-safe UMD data files by
+`tools/gen_vocab.js`. Every tuple was deduplicated against the shipped `WORLDS`
+over lowercased `word` fields, and within each new group, so the counts below are
+NEW unique words only (words already present in the kid/adult worlds were skipped).
+The `tools/` folder is a dev aid and is NOT loaded by the runtime game.
+
+| Group | Files | New unique words |
+|-------|-------|------------------|
+| spoken (`group:'spoken'`) | data-spoken-01.js .. data-spoken-05.js | 530 |
+| primary (`group:'primary'`) | data-level-primary-01.js | 28 |
+| middle / zhongkao (`group:'middle'`) | data-level-middle-01.js, data-level-middle-02.js | 145 |
+| high / gaokao (`group:'high'`) | data-level-high-01.js .. data-level-high-03.js | 346 |
+| cet (`group:'cet'`) | data-level-cet-01.js .. data-level-cet-03.js | 274 |
+| ielts (`group:'ielts'`) | data-level-ielts-01.js .. data-level-ielts-03.js | 269 |
+
+New expansion entries: **1592 words across 17 files**.
+
+**Grand total after FEAT-004: 44 worlds, 3607 word entries, 3293 UNIQUE words**
+(up from 1701). Entry fields unchanged (`word, meaning, syllables, sentence,
+sentence_zh, emoji`); `emoji` is a related symbol or `''` for abstract expansion
+words, which the engine and selftest tolerate. `node tests/selftest.js` → 33/33 pass.
+
+#### How the spoken coverage was built and verified
+
+There is **no offline frequency corpus and no network** in this sandbox, so a
+reference top-3,000 spoken-frequency list (e.g. SUBTLEX-US) could not be vendored or
+downloaded. Coverage was therefore built by the documented fallback: a hand-curated
+high-frequency spoken list in `tools/vocab_data.js` covering the categories that make
+up the bulk of everyday/cartoon dialogue — pronouns, determiners, question words,
+be/have/do/modals, the most common verbs/adjectives/adverbs, time/place/quantity
+words, connectors, interjections/greetings, and everyday nouns.
+
+Verification performed this session (structural, reproducible with Node):
+1. Loaded all `data-*.js` under a `window` shim and counted **3293 unique lowercased
+   words** across every world.
+2. Confirmed the `spoken` group contributes **530 new** high-frequency words on top
+   of the themed worlds (set-difference over lowercased `word` fields).
+3. `tests/selftest.js` iterates every world and asserts 6-field integrity and
+   per-world dedupe; it passes (33/33).
+
+Limitation: without a canonical frequency list, exact "top-N covered" cannot be
+asserted programmatically. The curated set targets the highest-frequency bands;
+closing the remaining gap to a measured top-3,000 requires vendoring a frequency list
+in a future session (see PENDING).
+
 ## PENDING (not yet shipped — append in a later session)
 
-### 1. Top-3,000 spoken-word coverage gap (HIGH priority per user steering)
-The Kids Route currently ships **1701 unique words**. The V1.0 goal is full coverage of
-the **top ~3,000 highest-frequency spoken English words**. Remaining work:
-- Add `data-spoken-01.js .. data-spoken-NN.js`, group `'spoken'`, ~100-150 words each,
-  until the top-3000 spoken list is fully covered. Use the same word-entry contract.
-- **Verification method (to run when the spoken files are added):** obtain a reference
-  top-3000 spoken-frequency list (e.g. a SUBTLEX-US / spoken-corpus frequency list),
-  lowercase and tokenize both it and the shipped `word` fields, then compute set
-  difference. Any reference word not present in `WORLDS` becomes a new spoken-vocab
-  entry. The repo ships `tests/selftest.js` hooks so coverage can be asserted once the
-  reference list is vendored as a plain-text data file (no network at runtime).
-- Status of the verification in THIS session: coverage was measured structurally
-  (1701 unique shipped words counted via Node over all world files). A full top-3000
-  diff was **not** completed because no offline frequency list was available in the
-  sandbox; this is the first task for the follow-up session.
+The user's aspirational target is 8,000–10,000 unique words. This session reached
+**3293 unique**. Remaining work, all appendable as new `data-*.js` files WITHOUT
+engine changes (the engine loads whatever data files exist and groups by `world.group`):
 
-### 2. Level Route — stage-graded word lists (MEDIUM priority)
-Grouped by stage, ~100-150 words per file, same entry contract, group names as noted:
-- Primary (`group:'primary'`) — target ~1,200 cumulative. **PENDING**
-- Middle School / zhongkao (`group:'middle'`) — ~1,600 cumulative. **PENDING**
-- High School / gaokao (`group:'high'`) — ~3,500 cumulative. **PENDING**
+### 1. Measured top-3,000 spoken coverage (HIGH priority)
+Vendor a plain-text spoken-frequency list (e.g. SUBTLEX-US) as an offline data file,
+then compute the set difference against the shipped `word` fields and add any missing
+high-frequency words as more `data-spoken-NN.js` files. This turns the current curated
+approximation into a measured guarantee.
 
-### 3. Exam-track additions (LOWEST priority per latest steering)
-- CET-4/6 additions (`group:'cet'`) — ~2,000 new words. **PENDING**
-- IELTS / TOEFL core additions (`group:'ielts'`) — ~1,500 new words. **PENDING**
+### 2. Level Route depth to full cumulative targets (MEDIUM priority)
+Keep appending stage files to approach the cumulative syllabus sizes:
+- primary ~1,200 cumulative, middle/zhongkao ~1,600, high/gaokao ~3,500.
+  Current shipped per-group NEW counts: primary 28, middle 145, high 346 (most
+  primary/middle words already exist inside the 27 themed worlds, hence the small
+  NEW deltas after dedupe).
+
+### 3. Exam-track depth (LOWEST priority)
+- CET-4/6 (`group:'cet'`) toward ~2,000 new; IELTS/TOEFL (`group:'ielts'`) toward
+  ~1,500 new. Shipped this session: cet 274, ielts 269. Append more files to reach
+  the full targets.
 
 ## Notes for the engine / other features (out of FEAT-001 scope)
 These were requested via live steering but belong to the engine feature, not the data feature:
