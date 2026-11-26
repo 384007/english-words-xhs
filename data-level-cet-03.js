@@ -9,20 +9,20 @@
     group: 'cet',
     star_req: 0,
     words: [
-      { word: 'endure', meaning: '忍受', syllables: 'en-du-re', sentence: 'I can use the word "endure" in a sentence.', sentence_zh: '我能在句子里用“忍受”这个词。', emoji: '' },
-      { word: 'energetic', meaning: '精力充沛的', syllables: 'e-ner-ge-tic', sentence: 'I can use the word "energetic" in a sentence.', sentence_zh: '我能在句子里用“精力充沛的”这个词。', emoji: '' },
-      { word: 'enforce', meaning: '执行', syllables: 'en-for-ce', sentence: 'I can use the word "enforce" in a sentence.', sentence_zh: '我能在句子里用“执行”这个词。', emoji: '' },
-      { word: 'engage', meaning: '从事', syllables: 'en-ga-ge', sentence: 'I can use the word "engage" in a sentence.', sentence_zh: '我能在句子里用“从事”这个词。', emoji: '' },
-      { word: 'engrave', meaning: '雕刻', syllables: 'eng-ra-ve', sentence: 'I can use the word "engrave" in a sentence.', sentence_zh: '我能在句子里用“雕刻”这个词。', emoji: '' },
-      { word: 'enlarge', meaning: '扩大', syllables: 'en-lar-ge', sentence: 'I can use the word "enlarge" in a sentence.', sentence_zh: '我能在句子里用“扩大”这个词。', emoji: '' },
-      { word: 'enlist', meaning: '征募', syllables: 'en-list', sentence: 'I can use the word "enlist" in a sentence.', sentence_zh: '我能在句子里用“征募”这个词。', emoji: '' },
-      { word: 'enrich', meaning: '丰富', syllables: 'en-rich', sentence: 'I can use the word "enrich" in a sentence.', sentence_zh: '我能在句子里用“丰富”这个词。', emoji: '' },
-      { word: 'enroll', meaning: '注册', syllables: 'en-roll', sentence: 'I can use the word "enroll" in a sentence.', sentence_zh: '我能在句子里用“注册”这个词。', emoji: '' },
-      { word: 'entail', meaning: '需要', syllables: 'en-tail', sentence: 'I can use the word "entail" in a sentence.', sentence_zh: '我能在句子里用“需要”这个词。', emoji: '' },
-      { word: 'entertain', meaning: '娱乐', syllables: 'en-ter-tain', sentence: 'I can use the word "entertain" in a sentence.', sentence_zh: '我能在句子里用“娱乐”这个词。', emoji: '' },
-      { word: 'enthusiasm', meaning: '热情', syllables: 'ent-hu-siasm', sentence: 'I can use the word "enthusiasm" in a sentence.', sentence_zh: '我能在句子里用“热情”这个词。', emoji: '' },
-      { word: 'entice', meaning: '诱惑', syllables: 'en-ti-ce', sentence: 'I can use the word "entice" in a sentence.', sentence_zh: '我能在句子里用“诱惑”这个词。', emoji: '' },
-      { word: 'envisage', meaning: '设想', syllables: 'en-vi-sa-ge', sentence: 'I can use the word "envisage" in a sentence.', sentence_zh: '我能在句子里用“设想”这个词。', emoji: '' }
+      { word: 'endure', meaning: '忍受', syllables: 'en-du-re', sentence: 'The soldiers had to endure the bitter cold.', sentence_zh: '士兵们不得不忍受刺骨的严寒。', emoji: '' },
+      { word: 'energetic', meaning: '精力充沛的', syllables: 'e-ner-ge-tic', sentence: 'The energetic puppy ran around all day.', sentence_zh: '这只精力充沛的小狗整天跑来跑去。', emoji: '' },
+      { word: 'enforce', meaning: '执行', syllables: 'en-for-ce', sentence: 'The police work hard to enforce the law.', sentence_zh: '警察努力执行法律。', emoji: '' },
+      { word: 'engage', meaning: '从事', syllables: 'en-ga-ge', sentence: 'She loves to engage in lively debates.', sentence_zh: '她喜欢从事热烈的辩论。', emoji: '' },
+      { word: 'engrave', meaning: '雕刻', syllables: 'eng-ra-ve', sentence: 'They will engrave her name on the cup.', sentence_zh: '他们会在奖杯上雕刻她的名字。', emoji: '' },
+      { word: 'enlarge', meaning: '扩大', syllables: 'en-lar-ge', sentence: 'We plan to enlarge the small kitchen.', sentence_zh: '我们计划扩大这个小厨房。', emoji: '' },
+      { word: 'enlist', meaning: '征募', syllables: 'en-list', sentence: 'He chose to enlist in the army at eighteen.', sentence_zh: '他选择在十八岁时应征入伍。', emoji: '' },
+      { word: 'enrich', meaning: '丰富', syllables: 'en-rich', sentence: 'Reading can enrich your mind.', sentence_zh: '阅读能丰富你的头脑。', emoji: '' },
+      { word: 'enroll', meaning: '注册', syllables: 'en-roll', sentence: 'You can enroll in the class online.', sentence_zh: '你可以在网上注册这门课。', emoji: '' },
+      { word: 'entail', meaning: '需要', syllables: 'en-tail', sentence: 'This job will entail a lot of travel.', sentence_zh: '这份工作需要大量出差。', emoji: '' },
+      { word: 'entertain', meaning: '娱乐', syllables: 'en-ter-tain', sentence: 'The clown came to entertain the children.', sentence_zh: '小丑来娱乐孩子们。', emoji: '' },
+      { word: 'enthusiasm', meaning: '热情', syllables: 'ent-hu-siasm', sentence: 'She greeted the news with great enthusiasm.', sentence_zh: '她以极大的热情迎接这个消息。', emoji: '' },
+      { word: 'entice', meaning: '诱惑', syllables: 'en-ti-ce', sentence: 'Low prices entice people into the shop.', sentence_zh: '低价诱惑人们走进商店。', emoji: '' },
+      { word: 'envisage', meaning: '设想', syllables: 'en-vi-sa-ge', sentence: 'I can easily envisage a brighter future.', sentence_zh: '我能轻松地设想一个更光明的未来。', emoji: '' }
     ]
   };
   var root = (typeof window !== 'undefined') ? window : (typeof global !== 'undefined' ? global : this);
